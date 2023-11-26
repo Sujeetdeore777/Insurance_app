@@ -56,27 +56,23 @@ Password : password
 # Steps to run the project
 
 Requirements : Python 3.x version
-
-1. Clone the project to local directory
    
-   <i>git clone https://github.com/antoprince001/Blockchain_for_EHR.git</i>
-   
-2. Change directory to cloned project 
+1. Change directory to cloned project 
  
    <i>cd Blockchain_for_EHR</i>
    
-3. Install the pip module dependencies (Preferably in virtual enivironment)
+2. Install the pip module dependencies (Preferably in virtual enivironment)
    
    <i>pip install - r requirements.txt</i>
    
-4. Then, run the main app.py file 
+3. Then, run the main app.py file 
 
    <i>python app.py</i>
    
-5. If you want to configure your own mongodb connection
+4. If you want to configure your own mongodb connection
    - Create an account in MongoDB Cloud atlas
    - Create a cluster and retrieve the connection url
    - Update the connection URL in Line 61 of app.py file
 
-6. View the website live at http://localhost:5000/
+5. View the website live at http://localhost:5000/
 
