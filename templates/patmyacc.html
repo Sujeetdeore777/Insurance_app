@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Welcome DOC!</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("/static/img/myacc.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            font-family: 'Open Sans', sans-serif;
+            font-size: x-large;
+            letter-spacing: 3px;
+            font-style: ;
+            line-height: 150%;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            font-size: 20px;
+            color: white; /* Set the text color to white */
+        }
+
+        .navbar-brand:hover {
+            color: #dc3545; /* Change the text color on hover */
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+    <nav class="navbar navbar-dark bg-dark">
+        <a class="navbar-brand" href="/" style='font-size: 40px;'><i class="fa fa-home"></i> Home</a>
+    
+        <div>
+            <a class="navbar-brand" href="/back"> DASHBOARD </a> &nbsp;&nbsp;
+            <a class="navbar-brand" href="/logout">LOGOUT</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action active">
+                <h3 class="text-white">ACCOUNT INFORMATION</h3>
+            </a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 mt-4">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>FIRST NAME:</td>
+                        <td>{{ post.first }}</td>
+                    </tr>
+                    <tr>
+                        <td>LNAME:</td>
+                        <td>{{ post.second }}</td>
+                    </tr>
+                    <tr>
+                        <td>CREATION:</td>
+                        <td>{{ post.timestamp }}</td>
+                    </tr>
+                    <tr>
+                        <td>CITY:</td>
+                        <td>{{ post.city }}</td>
+                    </tr>
+                    <tr>
+                        <td>STATE:</td>
+                        <td>{{ post.state }}</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Commented out the guardian section
+    <div class="container mt-4">
+        <div class="list-group">
+            <a class="list-group-item list-group-item-action active">
+                <h3 class="text-white">GUARDIAN ACCOUNT</h3>
+            </a>
+            <a href="/addguard" class="list-group-item list-group-item-action">ADD GUARDIAN</a>
+            <a href="/linkedacc" class="list-group-item list-group-item-action">LINKED ACCOUNTS</a>
+        </div>
+    </div>
+    -->
+
+</body>
+</html>

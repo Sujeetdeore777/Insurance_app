@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Medical Records</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 20px;
+    }
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+    tr:nth-child(even) {
+      background-color: #f7f7f7;
+    }
+    h1, h3 {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .record-link {
+      text-decoration: none;
+      background-color: #007bff;
+      color: #fff;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+    .btn-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .btn-success, .btn-danger {
+      margin: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav class="navbar navbar-dark bg-dark mb-3">
+      <a class="navbar-brand" href="/" style="font-size: 28px;">PATREC</a>
+      <div>
+        <a class="navbar-brand" href="/viewmore"> DASHBOARD</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" href="/logout">LOGOUT</a>
+      </div>
+    </nav>
+    <div class="btn-container">
+      <button type="button" class="btn btn-success" onclick="alert('Your Insurance Claim is Accepted!')">Accept</button>
+      <button type="button" class="btn btn-danger" onclick="alert('Your Insurance Claim is Rejected!')">Reject</button>
+    </div>
+    <h1>MEDICAL BLOCK RECORDS</h1>
+    <center>
+      <h3>RECORD ID: {{post._id}} <br> <br> CREATED ON: <b>{{post.timestamp}}</b></h3>
+    </center>
+    <table>
+      <tr>
+        <th>Field Name</th>
+        <th>Value</th>
+      </tr>
+      {% for key, value in post.items() %}
+      <tr>
+        {% if "SCAN" not in key and key not in ['prev', 'hash', ''] %}
+        <td>{{ key }}</td>
+        <td>{{ value }}</td>
+        {% endif %}
+        {% if "SCAN" in key %}
+        <td>{{ key }}</td>
+        <td><a class="record-link" href="{{ "http://localhost:8080/ipfs/" + value }}" target="_blank">VIEW SCAN</a></td>
+        {% endif %}
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Signup</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        body {
+            background: url("https://example.com/your-new-background-image.jpg"); /* Replace with your image URL */
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+
+        .container h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-bottom: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            outline: none;
+        }
+
+        select,
+        input[type="radio"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .custom-control-label::before {
+            border: 1px solid #fff;
+        }
+
+        .btn-primary {
+            width: 100%;
+            background: #28a745;
+            border: none;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+
+        .btn-primary:hover {
+            background: #218838;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto;
+            display: block;
+        }
+
+        .home-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-and-shapes-3/177800/129-512.png"
+            class="avatar" alt="Doctor Avatar">
+        <h1>Doctor Signup</h1>
+        <form action="/docver" method="POST">
+            <div class="form-group">
+                <label for="doc">Doctor Name</label>
+                <input type="text" name="doc" placeholder="Doctor Name" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="male" name="gen" value="male" required>
+                    <label class="custom-control-label" for="male">Male</label>
+                </div>
+                <div class="custom-control custom-radio">
+                    <input type="radio" class="custom-control-input" id="female" name="gen" value="female" required>
+                    <label class="custom-control-label" for="female">Female</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth</label>
+                <input type="date" name="dob" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="age" placeholder="Age" required>
+            </div>
+            <div class="form-group">
+                <label for="special">Specialization</label>
+                <input type="text" name="special" placeholder="Specialized In" required>
+            </div>
+            <div class="form-group">
+                <label for="add">Workplace</label>
+                <input type="text" name="add" placeholder="Location" required>
+            </div>
+            <div class="form-group">
+                <label for="qualific">Qualification</label>
+                <input type="text" name="qualific" placeholder="Qualified In" required>
+            </div>
+            <div class="form-group">
+                <label for="grad">Graduated From</label>
+                <input type="text" name="grad" placeholder="Pursued From" required>
+            </div>
+            <div class="form-group">
+                <label for="more">Further Details (if any)</label>
+                <input type="text" name="more" placeholder="About Me">
+            </div>
+            <div class="form-group">
+                <label for="num">Workplace Phone Number</label>
+                <input type="text" name="num" placeholder="Phone" required>
+            </div>
+            <div class="form-group">
+                <label for="n">Personal Contact Number</label>
+                <input type="text" name="n" placeholder="Phone" required>
+            </div>
+            <div class="form-group">
+                <label for="pwd">Password</label>
+                <input type="password" name="pwd" placeholder="Password" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+        <div class="home-button">
+            <a href="/">Home</a>
+        </div>
+    </div>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

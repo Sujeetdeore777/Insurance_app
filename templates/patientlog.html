@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>LOGIN HERE</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body style="background-image: url('https://img5.goodfon.com/original/1366x768/8/cb/drug-medication-bottles-pills.jpg?d=1'); background-size: cover; background-repeat: no-repeat; background-attachment: fixed;">
+    <div class="container">
+        <nav class="navbar navbar-inverse" style="background-color: transparent; border: none;">
+            <div class="container-fluid">
+                <a href="/" type="button" class="btn btn-success btn-lg"><i class="fa fa-home"></i></a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        <form action='/patientver' method='POST'>
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+                    <div class="panel panel-default"
+                        style="background: rgba(0, 0, 0, 0.5); color: white; border-radius: 10px;">
+                        <div class="panel-heading text-center">
+                            <h1 style="font-family: 'Courgette', cursive; font-size: 36px;">LOGIN</h1>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label for="PID" style="font-size: 18px;">PATIENT ID</label>
+                                <input type="text" class="form-control" name="PID" style="font-size: 16px;">
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd" style="font-size: 18px;">PASSWORD</label>
+                                <input type="password" class="form-control" name="pwd" style="font-size: 16px;">
+                            </div>
+                        </div>
+                        <div class="panel-footer text-center">
+                            <button type="submit" class="btn btn-success"
+                                style="font-size: 18px; background-color: #4caf50; border: none;">SIGN IN</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

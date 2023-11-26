@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Log - Patient record</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            font-size: 2rem;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover {
+            color: #dc3545;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        h1 {
+            color: #dc3545;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .card-header {
+            background-color: #343a40;
+            color: #fff;
+            font-size: 1.25rem;
+            text-align: center;
+            padding: 8px;
+        }
+
+        .card-body {
+            padding: 10px;
+        }
+
+        .card-title {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .btn-accept {
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+        }
+
+        .btn-reject {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+        }
+
+        .btn-accept:hover,
+        .btn-reject:hover {
+            opacity: 0.8;
+        }
+
+        .action-buttons {
+            text-align: center;
+        }
+
+        .action-buttons button {
+            margin: 5px;
+        }
+
+        .date-input {
+            width: 170px;
+        }
+
+        .text-in-box {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+
+        .text-in-box p {
+            margin: 0;
+        }
+
+        .card-footer {
+            text-align: right;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/"><i class="fa fa-home"></i> Home</a>
+        <div class="ml-auto">
+            <a class="navbar-brand" href="/back">DASHBOARD</a>
+            <a class="navbar-brand" href="/logout">LOGOUT</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Access Log</h1>
+
+        {% for post in posts %}
+        <div class="card">
+            <div class="card-header">
+                Access Request
+            </div>
+            <div class="card-body">
+                <h2 class="card-title">Initiated by <b>{{ post.accessor }}</b></h2>
+                <p class="text-in-box"><strong>Record ID:</strong> {{ post.record }}</p>
+                <p class="text-in-box"><strong>Current Status:</strong> {{ post.status }}</p>
+                <p class="text-in-box"><strong>Time Requested:</strong> {{ post.timestamp }}</p>
+
+                <form action="/authorize" method="post">
+                    <input type="hidden" name="record" value="{{ post.record }}">
+                    <input type="hidden" name="accessor" value="{{ post.accessor }}">
+                    <input type="hidden" name="status" value="{{ post.status }}">
+                    <div class="form-group">
+                        <label for="timeperiod">Time Period (Date and Time):</label>
+                        <input type="datetime-local" id="timeperiod" name="timeperiod" class="date-input">
+                    </div>
+                    <div class="action-buttons">
+                        <button type="submit" class="btn btn-accept">Accept</button>
+                        <button type="submit" formaction="/deny" class="btn btn-reject">Reject</button>
+                    </div>
+                </form>
+            </div>
+            <div class="card-footer">
+                {{ post.timestamp }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

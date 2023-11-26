@@ -1,0 +1,518 @@
+[
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "record_id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "recordIndex",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "timestamp",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "currentWeight",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "currentHeight",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "analysis",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bloodDetails",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bp",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bmi",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "age",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isDiabetic",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isAllergic",
+        "type": "bool"
+      }
+    ],
+    "name": "RecordCreated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "recordIndex",
+        "type": "uint256"
+      }
+    ],
+    "name": "RecordDeleted",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "record_id",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "recordIndex",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint16",
+        "name": "currentWeight",
+        "type": "uint16"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "currentHeight",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "analysis",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bloodDetails",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bp",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "bmi",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint8",
+        "name": "age",
+        "type": "uint8"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isDiabetic",
+        "type": "bool"
+      },
+      {
+        "indexed": false,
+        "internalType": "bool",
+        "name": "isAllergic",
+        "type": "bool"
+      }
+    ],
+    "name": "RecordUpdated",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "record_id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "gender",
+        "type": "string"
+      },
+      {
+        "internalType": "uint16",
+        "name": "currentWeight",
+        "type": "uint16"
+      },
+      {
+        "internalType": "string",
+        "name": "currentHeight",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "analysis",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bloodDetails",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bp",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bmi",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "age",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "isDiabetic",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAllergic",
+        "type": "bool"
+      }
+    ],
+    "name": "createGeneralMedicineRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "record_id",
+        "type": "string"
+      }
+    ],
+    "name": "deleteGeneralMedicineRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      }
+    ],
+    "name": "getGeneralMedicineRecords",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "record_id",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "gender",
+            "type": "string"
+          },
+          {
+            "internalType": "uint16",
+            "name": "currentWeight",
+            "type": "uint16"
+          },
+          {
+            "internalType": "string",
+            "name": "currentHeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "analysis",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "bloodDetails",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "bp",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "bmi",
+            "type": "string"
+          },
+          {
+            "internalType": "uint8",
+            "name": "age",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isDiabetic",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isAllergic",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct HealthManagement.GeneralMedicine[]",
+        "name": "",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "record_id",
+        "type": "string"
+      }
+    ],
+    "name": "getRecordByRecordId",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "string",
+            "name": "record_id",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "timestamp",
+            "type": "uint256"
+          },
+          {
+            "internalType": "string",
+            "name": "gender",
+            "type": "string"
+          },
+          {
+            "internalType": "uint16",
+            "name": "currentWeight",
+            "type": "uint16"
+          },
+          {
+            "internalType": "string",
+            "name": "currentHeight",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "analysis",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "bloodDetails",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "bp",
+            "type": "string"
+          },
+          {
+            "internalType": "string",
+            "name": "bmi",
+            "type": "string"
+          },
+          {
+            "internalType": "uint8",
+            "name": "age",
+            "type": "uint8"
+          },
+          {
+            "internalType": "bool",
+            "name": "isDiabetic",
+            "type": "bool"
+          },
+          {
+            "internalType": "bool",
+            "name": "isAllergic",
+            "type": "bool"
+          }
+        ],
+        "internalType": "struct HealthManagement.GeneralMedicine",
+        "name": "",
+        "type": "tuple"
+      },
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "id",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "record_id",
+        "type": "string"
+      },
+      {
+        "internalType": "uint16",
+        "name": "currentWeight",
+        "type": "uint16"
+      },
+      {
+        "internalType": "string",
+        "name": "currentHeight",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "analysis",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bloodDetails",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bp",
+        "type": "string"
+      },
+      {
+        "internalType": "string",
+        "name": "bmi",
+        "type": "string"
+      },
+      {
+        "internalType": "uint8",
+        "name": "age",
+        "type": "uint8"
+      },
+      {
+        "internalType": "bool",
+        "name": "isDiabetic",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "isAllergic",
+        "type": "bool"
+      }
+    ],
+    "name": "updateGeneralMedicineRecord",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

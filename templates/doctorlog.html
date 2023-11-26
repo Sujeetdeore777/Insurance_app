@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <style>
+        /* Updated styles */
+        body {
+            background-image: url(https://img3.goodfon.com/original/1366x768/6/3f/medical-electrocardiogram.jpg?d=1);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            font-family: 'Open Sans', sans-serif; /* Use a Google Font */
+        }
+
+        .navbar {
+            background-color: #007bff;
+        }
+
+        .container {
+            margin-top: 20px;
+        }
+
+        .login-box {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .login-box h1 {
+            font-size: 30px;
+            text-align: center;
+            color: #333; /* Dark text color */
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 12px;
+            font-size: 16px;
+        }
+
+        .fa-user, .fa-lock {
+            font-size: 20px;
+            margin-right: 10px;
+        }
+
+        .btn-login {
+            background-color: #f58220; /* Attractive button color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 12px 24px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Add a smooth hover effect */
+        }
+
+        .btn-login:hover {
+            background-color: #e74c3c; /* Change color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="/domain"><i class="fas fa-home"></i> Home</a>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="login-box">
+                    <h1>Login</h1>
+                    <form action="/doclogover" method="POST">
+                        <div class="form-group">
+                            <label for="DID"><i class="fas fa-user"></i> Doctor ID</label>
+                            <input type="text" class="form-control" name="DID" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pwd"><i class="fas fa-lock"></i> Password</label>
+                            <input type="password" class="form-control" name="pwd" required>
+                        </div>
+                        <button type="submit" class="btn btn-login">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

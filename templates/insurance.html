@@ -1,0 +1,284 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		.container{
+  color: solid black;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  padding-top:15px;
+  padding-bottom:15px;
+  padding-left:15px;
+  padding-right:15px;
+  font-size:15px;
+
+		}
+		body{
+			background-image: url('/static/img/ins.jpg');
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+            }
+		.a {
+  color: solid black;
+  border-top-style: solid;
+  border-right-style: solid;
+  border-bottom-style: solid;
+  border-left-style: solid;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 25px;
+}
+	</style>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<title>Insurance Cover</title>
+</head>
+<body>
+		
+	<a href="/domain"><button  style="float:right;" type="button" class="btn btn-warning btn-lg" >Home</button></a>
+	<h1><strong>PATREC</strong>  <b><i>Welcome to Insurance page</i></b> </h1>
+    </br>
+    </br>
+    </br>
+    
+    <h1 style="font-size:30px; padding-left: 25px;"><b><i>About</i></b></h1>
+    <p style="font-size: 20px; padding-left: 25px;padding-right: 25px;"><strong>Health insurance is an insurance that covers the whole or a part of the risk of a person incurring medical expenses, spreading the risk over numerous persons. By estimating the overall risk of health care and health system expenses over the risk pool, an insurer can develop a routine finance structure, such as a monthly premium or payroll tax, to provide the money to pay for the health care benefits specified in the insurance agreement. The benefit is administered by a central organization such as a government agency, private business, or not-for-profit entity.</i></br>
+   According to the Health Insurance Association of America, health insurance is defined as "coverage that provides for the payments of benefits as a result of sickness or injury. It includes insurance for losses from accident, medical expense, disability, or accidental death and dismemberment"</strong></p>
+   	</br>
+   	
+   	<a href="/apply"><button style="float: center;" type="button" class="btn btn-primary btn-lg">Apply for Insurance?</button></a>
+   </br>
+</br>
+
+   	<h1><strong>Claim Application Form</strong></h1>
+   	<form class="a" action="">
+   		 <label for="no"><strong>Policy Number:</strong></label>
+      <input type="number" class="form-control" id="no" name="no" placeholder="123456789 / 123456789 / 123456789"  required="">
+   		<p style="font-size: 20px;"><i><strong>(Please enter the policy number)</strong></i></p>
+   	</br>
+   	 <label for="name"><strong>Name of the Life insured:</strong></label>
+      <input type="text" class="form-control" id="name" name="name" placeholder="Enter name of the insurance holder" required=""></br>
+      <p style="font-size: 20px;"><i><strong>
+      (Through whom you are submitting the document claim kindly select one)</strong></i></p> 
+      <div class="form-row">
+      		 <div class="col">
+     <label style="font-size: 20px;" class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="advisor"><strong>Agent Advisor</strong>
+      </label></br></div>
+      <div class="col">
+     <label style="font-size: 20px;" class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="company"><strong>Insurance Company</strong>
+      </label></br></div>
+      <div class="col">
+      <label style="font-size: 20px;" class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="other"><strong>Any Other</strong>
+      </label><p style="font-size: 20px;"><i><strong>(Please specify)</strong></i><input type="text" name="other1"></p></br></div>
+      </div>
+      
+      <h1 style="font-size: 20px;"><b>Section A(please fill out yourself)</b></h1>
+  <div class="container">
+      	<div class="form-row">
+      		 <div class="col">
+      		<label for="yourname"><strong>Your Name</strong></label>
+      <input type="text" class="form-control" id="yourname" name="yourname" placeholder="Enter your name" required=""> </div>
+       <div class="col">
+      <label for="yourage"><strong>Your Age</strong></label>
+      <input type="number" class="form-control" id="yourname" name="yourage" placeholder="Enter your age" required=""> </div>
+  </div></br>
+  <div class="form-row">
+      		 <div class="col">
+      		 	<label for="yournumber"><strong>Your mobile Number</strong></label>
+      <input type="number" class="form-control" id="yournumber" name="yournumber" placeholder="+91 1234567890" required=""> </div>
+      <div class="col">
+      		 	<label for="youraltnumber"><strong>Your alternate mobile Number</strong></label>
+      <input type="number" class="form-control" id="youraltnumber" name="youraltnumber" placeholder="+91 1234567890" required=""> </div>
+  </div>
+  	<label for="email"><strong>Your Email Id</strong></label>
+      <input type="email" class="form-control" id="youremail" name="youremail" placeholder="sample@gmail.com" required=""></br> 
+<label for="aadhar"><strong>Your Aadhar Number</strong></label>
+      <input type="number" class="form-control" id="youraadhar" name="youraadhar" placeholder="xxxx xxxx xxxx" required=""></br>
+      <label for="relationship"><strong>Your relationship with Insurance Holder</strong></label>
+      <input type="text" class="form-control" id="relationship" name="relationship" placeholder="father/mother/spouse..." required=""> </br>
+       
+<label for="add"><strong>Your Complete Address</strong></label>
+      <input type="address" class="form-control" id="add" name="add" placeholder="Door number/street/area/city/state/pincode...." required=""> </br>
+      <button  class="btn btn-primary btn-lg">Submit</button>
+      
+  </div>
+</form>
+</body>
+</html-->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome Doc !</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <style>
+
+    p,
+    ul {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: x-large;
+      letter-spacing: 3px;
+      font-style: oblique;
+      line-height: 150%;
+    }
+
+    body{
+      background-image: url("/static/img/docdash.jpg");
+      background-size :cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    .card{
+      
+      background-image : url("");
+      background-size :cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      opacity: 0.75;
+      filter: alpha(opacity=75);
+     
+
+    }
+  </style>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-dark" >
+        <!--<a class="navbar-brand" href="/" style='text-shadow: 4px 4px white;color:black;font-size: 40px;font-weight: 700; '>PATREC</a>-->
+        <div class="container">
+          <h1><a href="/" type="button" class="but" ><i class="fa fa-home fa-2x" style="color: white;"></i></a></h1></div>
+
+        
+    
+      
+      <div>
+
+        
+
+        <a class="navbar-brand" href="/logout">LOGOUT </button></a>
+
+      </div>
+      
+    </nav>
+     
+
+  <!-- <div id='bgpic'>
+    <img src="/static/img/diff.jpeg" class="d-block w-100" alt="image" height="500">
+  </div> -->
+  <br>
+
+ <center><i><strong> <b><h1 style="font-weight: 700; text-shadow: 4px 4px white;">DASHBOARD OF {{ session['user'] }}</h1></b></strong></i></center>
+  <br>
+  <div class='container'>
+    <div class='row'>
+      <!-- <div class='col' style='box-shadow: 40em;'>
+        
+          <br><br>
+          <center>
+            <div class="card-transparent" style="width: 15rem; height: 20rem; box-shadow: 40em;">
+              
+                
+                <div style="font-size: 200px;"><i class="fa fa-user-md" aria-hidden="true"></i></div>
+              <div class="card-body">
+                
+
+                <center><a href="/myacc" class="btn btn-success">MY ACCOUNT</a></center>
+              </div>
+            </div>
+
+          </center>
+       
+      </div> -->
+
+      <!-- <div class='col' style='box-shadow: 40em;'>
+        <br><br>
+        <center>
+          <div class="card-transparent" style="width: 15rem; height: 20rem; box-shadow: 40em;">
+            
+            <div style="font-size: 200px;"><i class="fa fa-plus-square" aria-hidden="true"></i></div>
+            <div class="card-body">
+              <center><a href="/medrecord" class="btn btn-success">CREATE RECORD</a></center>
+            </div>
+          </div>
+        </center>
+      </div> -->
+    
+
+       <!-- abi-->
+       <div class='col'style='box-shadow: 40em;'>
+        <br><br>
+        <center>
+          <div class="card-transparent" style="width: 15rem; height: 20rem; box-shadow: 40em;">
+            <div style="font-size: 200px;"><i class="fa fa-book" aria-hidden="true"></i></div>
+            
+            
+              <div class="card-body">
+                <center><a href="/docview" class="btn btn-success">REQUEST RECORD</a></center>
+              </div>
+            
+          </div>
+        </center>
+      </div>
+    
+      
+      
+
+      <div class='col'style='box-shadow: 40em;'>
+        <br><br>
+        <center>
+          <div class="card-transparent" style="width: 15rem; height: 20rem;box-shadow: 40em;;">
+            <!--<img src="/static/img/secure.jpg" class="card-img-top" alt="..." height='300' width='300'>-->
+            <div style="font-size: 200px;"><i class="fa fa-medkit" aria-hidden="true" ></i></div>
+            <div class="card-body">
+              
+              <center><a href="/available" class="btn btn-success">AVAILABLE RECORDS</a></center>
+            </div>
+          </div>
+        </center>
+      </div>
+
+
+
+
+
+
+    </div>
+  </diV>
+  <br><br><br><br><br><br>
+
+
+    </div>
+  </div>
+  
+  
+  
+</body>
+</body>
+
+</html>

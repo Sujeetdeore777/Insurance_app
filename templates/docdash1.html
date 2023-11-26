@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Welcome Insurance!</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-image: url("/static/img/insurancedash2.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background-color: #343a40;
+    }
+
+    .navbar-brand {
+      font-size: 28px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .navbar-brand:hover {
+      color: #17a2b8;
+    }
+
+    .container {
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      font-size: 18px;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    .card {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: none;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card i {
+      font-size: 96px;
+      color: #007bff;
+    }
+
+    .card-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+      border-color: #28a745;
+      font-size: 18px;
+    }
+
+    .btn-success:hover {
+      background-color: #1e7e34;
+      border-color: #1e7e34;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/"> <i class="fa fa-home" style="font-size: 50px; color: white;"></i></a>
+      <div>
+        <a class="navbar-brand" href="/back">DASHBOARD</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a class="navbar-brand" href="/logout">LOGOUT</a>
+      </div>
+    </nav>
+
+    <div class="row mt-5">
+      <div class="col-md-6">
+        <div class="card">
+          <i class="fa fa-book"></i>
+          <div class="card-body">
+            <h5 class="card-title"><strong>REQUEST RECORD</strong></h5>
+            <a href="/docview1" class="btn btn-success btn-lg">REQUEST RECORD</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="card">
+          <i class="fa fa-medkit"></i>
+          <div class="card-body">
+            <h5 class="card-title"><strong>AVAILABLE RECORDS</strong></h5>
+            <a href="/available1" class="btn btn-success btn-lg">AVAILABLE RECORDS</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="container mt-4">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <a href="/patview" class="btn btn-primary btn-lg">View for Patient record?</a>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

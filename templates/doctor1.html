@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Signup</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url("http://skpsoftware.com/img/content/services/hospital_management_system.jpg");
+            background-size: cover;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loginbox {
+            width: 400px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            box-sizing: border-box;
+            padding: 50px 30px;
+        }
+
+        .loginbox img.avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 20px;
+        }
+
+        .loginbox h1 {
+            margin: 0;
+            padding: 0 0 20px;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .loginbox p {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        .loginbox input {
+            width: 100%;
+            margin-bottom: 20px;
+            padding: 10px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid #fff;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .loginbox input[type="submit"] {
+            border: none;
+            outline: none;
+            height: 40px;
+            background: #28a745;
+            color: #fff;
+            font-size: 18px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .loginbox input[type="submit"]:hover {
+            background: #ffc107;
+        }
+
+        .loginbox a {
+            text-decoration: none;
+            font-size: 14px;
+            line-height: 20px;
+            color: #ffc107;
+        }
+
+        .loginbox a:hover {
+            color: #28a745;
+        }
+
+    </style>
+</head>
+<body>
+    <button class="home-button "><a href="/insurancein_out" style="position: absolute; top: 10px; left: 100px; font-size: 20px; color: black; text-decoration: none;"><i class="fas fa-home"></i> Home</a></button>
+ 
+<div class="loginbox">
+    <img src="https://cdn4.iconfinder.com/data/icons/social-messaging-ui-color-and-shapes-3/177800/129-512.png"
+         class="avatar" alt="Avatar">
+    <h1>Insurance Signup</h1>
+    <form action='/docver1' method="POST">
+        <p>Insurance Name</p>
+        <input type="text" name="doc" placeholder="Insurance Name" autocomplete="off" required>
+        <p>Insurance Company</p>
+        <input type="text" name="nm" class="form-control" placeholder="Insurance Company" required>
+        <p>Contact Number</p>
+        <input type="text" name="no" placeholder="Contact Number" autocomplete="off" required>
+        <p>Password</p>
+        <input type="password" name="pwd" placeholder="Password" required>
+        <br>
+        <input type="submit" value="Sign Up">
+    </form>
+</div>
+
+</body>
+</html>

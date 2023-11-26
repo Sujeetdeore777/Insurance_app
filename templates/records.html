@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Health Records</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/your/semantic/dist/semantic.min.css">
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"
+    integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+  <script src="path/to/your/semantic/dist/semantic.min.js"></script>
+  <style>
+    body {
+      background-image: url("/static/img/view.jpg");
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      margin-bottom: 30px;
+    }
+
+    .navbar-brand {
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+    }
+
+    .navbar-brand:hover {
+      color: #1976d2;
+    }
+
+    .navbar a.navbar-brand {
+      color: #fff !important;
+    }
+
+    .container {
+      margin-top: 30px;
+    }
+
+    .mbtn {
+      padding: 0.6em 2em;
+      border-radius: 8px;
+      color: #fff;
+      background-color: #1976d2;
+      font-size: 1.1em;
+      border: 0;
+      cursor: pointer;
+      margin: 1em;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .card-header {
+      background-color: #1976d2;
+      color: #fff;
+      font-size: 24px;
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+    .card-body {
+      color: #000;
+    }
+
+    .card-footer {
+      background-color: #1976d2;
+      color: #fff;
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">
+      <i class="fa fa-home"></i> Home
+    </a>
+    <div>
+      <a class="navbar-brand" href="/back"> DASHBOARD</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="navbar-brand" href="/logout">LOGOUT</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <center>
+      <h1 class="display-4">MEDICAL BLOCK RECORDS</h1>
+    </center>
+
+    {% for post in posts %}
+    <form action="/display" method="post">
+      {% if post._id != '' and post.type != 'none' %}
+      <div class="card mb-3">
+        <div class="card-header">
+          RECORD: {{post._id}}
+          <!--<button type="submit" class="btn btn-success float-right">View</button>-->
+          <button formaction="/share" class="btn btn-success float-right mr-2">Share</button> 
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Type: <b>{{ post.type }}</b></h5>
+          <p class="card-text">Created on: <b>{{ post.timestamp }}</b></p>
+          <input type="hidden" name="_id" value="{{ post._id }}">
+          <input type="hidden" name="owner" value="{{ post.owner }}">
+        </div>
+      </div>
+      {% endif %}
+    </form>
+    <br><br>
+    {% endfor %}
+    <br><br>
+  </div>
+</body>
+
+</html>

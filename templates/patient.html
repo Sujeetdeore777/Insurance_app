@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PATIENT SIGNUP</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+</head>
+
+<body style="background-image: url('http://skpsoftware.com/img/content/services/hospital_management_system.jpg'); background-size: cover; background-repeat: no-repeat;">
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header text-center">
+                    <a href="/" class="btn btn-primary"><i class="fa fa-home"></i> HOME</a>
+
+                        <h2>PATIENT SIGNUP</h2>
+                    </div>
+                    <div class="card-body">
+                        <form action='/patcreate' method="POST">
+                            <div class="form-group">
+                                <label for="usr">FIRST NAME</label>
+                                <input type="text" class="form-control" name="usr" placeholder="FIRST NAME" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="usr">LAST NAME</label>
+                                <input type="text" class="form-control" name="lsn" placeholder="LAST NAME">
+                            </div>
+                            <div class="form-group">
+                                <label for="usr">PASSWORD</label>
+                                <input type="password" class="form-control" name="pwd" placeholder="PASSWORD" required>
+                            </div>
+                            <div class="form-group">
+                                <label>GENDER</label><br>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="maleRadio" name="gender" value="MALE">
+                                    <label class="custom-control-label" for="maleRadio">MALE</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="femaleRadio" name="gender" value="FEMALE">
+                                    <label class="custom-control-label" for="femaleRadio">FEMALE</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">DATE OF BIRTH</label>
+                                <input type="date" class="form-control" name="dob" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">AGE</label>
+                                <input type="number" class="form-control" name="age" placeholder="AGE">
+                            </div>
+                            <div class="form-group">
+                                <label for="addres">ADDRESS</label>
+                                <input type="text" class="form-control" name="addres" placeholder="ADDRESS">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">COUNTRY</label>
+                                <select name="country" class="form-control countries order-alpha presel-IN" id="countryId">
+                                    <option value="">Select Country</option>
+                                    <option value="India">India</option>
+                                    <option value="Canada">Canada</option>
+                                    <option value="Brazil">Brazil</option>
+                                    <option value="Austria">Austria</option>
+                                    <option value="China">China</option>
+                                    <option value="england">england</option>
+                                    <option value="USA">USA</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="state">STATE</label>
+                                <select name="state" class="form-control states order-alpha" id="stateId" required>
+                                    <option value="">Select State</option>
+                                    <option value="Tamilnadu">Tamilnadu</option>
+                                      <option value="Maharashtra">Maharashtra</option>
+                                      <option value="Delhi">Gujrat</option>
+                                      <option value="AndraPradesh">AndraPradesh</option>
+                                      <option value="Delhi">Delhi</option>
+                                      <option value="Bihar">Bihar</option>
+                                      <option value="Goa">Goa</option>
+                                      <option value="Haryana">Haryana</option>
+                                      <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">CITY</label>
+                                <select name="city" class="form-control cities order-alpha" id="cityId" required>
+                                    <option value="">Select City</option>
+                                    <option value="Chennai">Chennai</option>
+                                      <option value="Pune">Pune</option>
+                                      <option value="Mumbai">Mumbai</option>
+                                      <option value="Nashik">Nashik</option>
+                                      <option value="Nashik">Thane</option>
+                                      <option value="Nashik">yeola</option>
+                                      <option value="Nashik">vadodara</option>
+                                      <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">PHONE</label>
+                                <input type="text" class="form-control" name="ph" placeholder="CONTACT NUMBER">
+                            </div>
+                            <div class="form-group">
+                                <label for="Aadhar">ENTER YOUR 12 DIGIT AADHAAR PIN</label>
+                                <input type="text" class="form-control" name="Aadhar" placeholder="UNIQUE ID">
+                            </div>
+                            <div class="form-group">
+                                <label for="inputUserName" class="control-label">EMAIL</label>
+                                <input type="email" class="form-control" name="inputUserName" aria-labelledby="emailnotification">
+                            </div>
+                            <div class="form-group">
+                                <label>ARE YOU CURRENTLY UNDER ANY MEDICATION?</label><br>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="medYesRadio" name="medication" value="YES">
+                                    <label class="custom-control-label" for="medYesRadio">YES</label>
+                                </div>
+                                <div class="custom-control custom-radio custom-control-inline">
+                                    <input type="radio" class="custom-control-input" id="medNoRadio" name="medication" value="NO">
+                                    <label class="custom-control-label" for="medNoRadio">NO</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">IF SO, SPECIFY</label>
+                                <textarea class="form-control" rows="3" name="message" placeholder="IF SO, SPECIFY" id="text"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">SIGN UP</button>
+                                <button type="reset" class="btn btn-info">RESET</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .card {
+            border: none;
+        }
+
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .custom-control-label::before {
+            border: 1px solid #007bff;
+        }
+    </style>
+
+</body>
+
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome Citizen!</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #343a40;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+
+    p, ul {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-style: italic;
+      line-height: 150%;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    .navbar-dark {
+      background-color: #343a40;
+    }
+
+    .navbar-brand, .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link:hover {
+      color: #bbb;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    /* Custom styles for the table cells */
+    .table-cell {
+      font-weight: bold;
+    }
+
+    /* Style for the copy button */
+    #copyButton {
+      display: block;
+      margin: 0 auto;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/"><i class="fa fa-home" style="font-size: 50px; color: white;"></i></a>
+        
+      <div>
+        <a class="navbar-brand" href="/viewmore">DASHBOARD</a>
+        <a class="navbar-brand" href="/logout">LOGOUT</a>
+      </div>
+    </nav>
+    <br>
+    <div>
+      <center>
+        <h1>HEAD PATIENT RECORDS</h1>
+        
+        <!-- Dropdown list to select patient ID -->
+        <select id="patientId" onchange="updateTable()">
+          <option value="">Select insurance claim ID</option>
+          {% for post in posts %}
+          <option value="{{ post._id }}">{{ post._id }}:{{ post.pid }}</option>
+          {% endfor %}
+        </select>
+
+        <!-- Table to display patient records -->
+        <table>
+          <thead>
+            <tr>
+              <th>INDEX</th>
+              <th>VALUE</th>
+            </tr>
+          </thead>
+          <tbody id="recordTableBody">
+            <!-- Records will be displayed here -->
+          </tbody>
+        </table>
+      </center>
+    </div>
+    
+    <!-- Button to copy patient ID -->
+    <button id="copyButton" onclick="copyPatientId()">Copy Patient ID</button>
+  </div>
+
+  <script>
+    // Sample posts data (replace with your actual data)
+    var posts = [
+      {% for post in posts %}
+      {
+        C_id:"{{ post._id }}",
+        pid: "{{ post.pid }}",
+        Addharno: "{{ post.Addharno }}",
+        policyno: "{{ post.policyno }}",
+        Date: "{{ post.Date }}",
+        Billamount: "{{ post.Billamount }}",
+        First: "{{ post.First }}",
+        timestamp: "{{ post.timestamp }}",
+        email: "{{ post.email }}",
+        address: "{{ post.address }}",
+      },
+      {% endfor %}
+    ];
+
+    // Function to update the table based on the selected ID
+    function updateTable() {
+      var selectedId = document.getElementById("patientId").value;
+
+      // Find the table body
+      var tableBody = document.getElementById("recordTableBody");
+      tableBody.innerHTML = "";
+
+      // Iterate through the posts data and display matching records
+      for (var i = 0; i < posts.length; i++) {
+        if (posts[i].C_id === selectedId) {
+          var row = tableBody.insertRow();
+          var indexCell = row.insertCell(0);
+          var valueCell = row.insertCell(1);
+
+          indexCell.className = "table-cell"; // Apply custom style to index cell
+          valueCell.className = "table-cell"; // Apply custom style to value cell
+          indexCell.innerHTML = Object.keys(posts[i]).join("<br>"); // Display keys as labels
+          valueCell.innerHTML = Object.values(posts[i]).join("<br>"); // Display values
+        }
+      }
+    }
+
+    // Function to copy patient ID (modified to copy post.pid)
+    function copyPatientId() {
+      var selectedId = document.getElementById("patientId").value;
+      if (selectedId) {
+        // Find the corresponding post object based on the selected ID
+        var selectedPost = posts.find(function (post) {
+          return post.C_id === selectedId;
+        });
+
+        if (selectedPost) {
+          var pidToCopy = selectedPost.pid;
+
+          // Create a temporary input element to copy the text
+          var tempInput = document.createElement("input");
+          tempInput.value = pidToCopy;
+          document.body.appendChild(tempInput);
+          tempInput.select();
+          document.execCommand("copy");
+          document.body.removeChild(tempInput);
+          alert("Patient ID copied to clipboard: " + pidToCopy);
+        } else {
+          alert("Patient ID not found in the posts data.");
+        }
+      } else {
+        alert("Please select a patient ID first.");
+      }
+    }
+
+    // Initialize the table when the page loads
+    window.onload = updateTable;
+  </script>
+</body>
+</html>

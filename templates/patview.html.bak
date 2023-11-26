@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome Citizen!</title>
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <style>
+    table {
+      font-family: Arial, sans-serif;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th, td {
+      border: 1px solid #dddddd;
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    p, ul {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      letter-spacing: 1px;
+      font-style: italic;
+      line-height: 150%;
+    }
+
+    .navbar-brand {
+      font-size: 24px;
+    }
+
+    .navbar-dark {
+      background-color: #343a40;
+    }
+
+    .navbar-brand, .navbar-dark .navbar-nav .nav-link {
+      color: #fff;
+    }
+
+    .navbar-brand:hover, .navbar-dark .navbar-nav .nav-link:hover {
+      color: #bbb;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 36px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="/">PATREC</a>
+      <div>
+        <a class="navbar-brand" href="/viewmore">GO TO DASHBOARD</a>
+        <a class="navbar-brand" href="/logout">LOGOUT</a>
+      </div>
+    </nav>
+    <br>
+    <div>
+      <center>
+        <h1>HEAD PATIENT RECORDS</h1>
+        {% for post in posts %}
+        <h2>FOR CLAIM {{ post._id }}</h2>
+        <table>
+          <tr>
+            <th>INDEX</th>
+            <th>VALUE</th>
+          </tr>
+          <tr>
+            <td>Patient ID</td>
+            <td>{{ post.pid }}</td>
+          </tr>
+          <tr>
+            <td>ADDHAR NUMBER</td>
+            <td>{{ post.Addharno }}</td>
+          </tr>
+          <tr>
+            <td>POLICY NUMBER</td>
+            <td>{{ post.policyno }}</td>
+          </tr>
+          <tr>
+            <td>DATE</td>
+            <td>{{ post.Date }}</td>
+          </tr>
+          <tr>
+            <td>BILL AMOUNT</td>
+            <td>{{ post.Billamount }}</td>
+          </tr>
+          <tr>
+            <td>FIRST NAME</td>
+            <td>{{ post.First }}</td>
+          </tr>
+          <tr>
+            <td>TIMESTAMP OF CREATION</td>
+            <td>{{ post.timestamp }}</td>
+          </tr>
+          <tr>
+            <td>email</td>
+            <td>{{ post.email }}</td>
+          </tr>
+          <tr>
+            <td>Address</td>
+            <td>{{ post.address }}</td>
+          </tr>
+        </table>
+        <br><br><br><br>
+        {% endfor %}
+      </center>
+    </div>
+  </div>
+</body>
+</html>

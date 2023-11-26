@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to PATREC</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url("/static/img/avail.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            font-size: 40px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .navbar-brand:hover {
+            color: #dc3545;
+        }
+
+        #gallery {
+            padding: 60px 0;
+        }
+
+        .card {
+            background-color: #f8f9fa;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+            height: 100%; /* Added to make the card height 100% */
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-top {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .btn-proceed {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="/">PATREC</a>
+        <div class="ml-auto">
+            <a class="navbar-brand" href="/back">DASHBOARD</a>
+            <a class="navbar-brand" href="/logout">LOGOUT</a>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <section id="gallery">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://www.pngitem.com/pimgs/m/42-422830_doctor-physician-md-medical-practitioner-clinician-doctor-clipart.png"
+                            alt="Find a Doctor">
+                        <div class="card-body">
+                            <h3 class="card-title">FIND A DOCTOR</h3>
+                            <a href="/formdis" class="btn btn-primary btn-proceed">PROCEED</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card">
+                        <img class="card-img-top"
+                            src="https://www.clipartkey.com/mpngs/m/244-2444987_make-an-appointment-book-appointment-icon-png.png"
+                            alt="Book Appointments">
+                        <div class="card-body">
+                            <h3 class="card-title">BOOK APPOINTMENTS</h3>
+                            <a href="/knowndoctor" class="btn btn-primary btn-proceed">PROCEED</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+
+</html>

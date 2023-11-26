@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style type="text/css">
+        body {
+            background-image: url("/static/img/applybg.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            color: solid black;
+            border-top-style: solid;
+            border-right-style: solid;
+            border-bottom-style: solid;
+            border-left-style: solid;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 15px;
+        }
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+        crossorigin="anonymous">
+    <title>Application for Insurance</title>
+
+    <!-- <form action='/apply1' method="POST"> -->
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-dark bg-dark">
+            <a class="navbar-brand" href="/"><i class="fa fa-home"></i> Home</a>
+
+            <div>
+
+                <a class="navbar-brand" href="/back1"> DASHBOARD </a> &nbsp;&nbsp;&nbsp;&nbsp;
+
+                <a class="navbar-brand" href="/logout">LOGOUT </button></a>
+            </div>
+        </nav>
+
+    </div>
+
+    <h1 style="font-size:40px;color: solid black;text-align:center;"><strong>Welcome</strong></h1>
+    <h2 style="font-size: 20px;color: solid black;text-align: center;"><i>Fill up the form below to get a
+            beneficiary Life Insurance</i></h2><br>
+    <div class="container">
+        <form action='/apply1' method="POST">
+            <div class="progress" style="height: 50px;">
+                <div class="progress-bar bg-dark" style="width:100%;font-size: 30px;"><i>1. Your Personal
+                        Information</i></div>
+            </div><br>
+            <div class="item">
+                <p><strong>Patient ID</strong><span class="required">*</span></p>
+                <input type="text" class="form-control" name="pid" value={{post._id}} required />
+            </div>
+
+            <label for="no"><strong>Policy Number:</strong></label>
+            <input type="text" class="form-control" id="no" name="no" placeholder="xxxx xxxx xxxx" required=""></br>
+            <div class="form-row">
+                <div class="col">
+                    <label for="dob"><strong>Date of birth</strong></label>
+                    <input type="date" class="form-control" id="dob" name="dob" placeholder="dd-mm-yyyy" required="">
+                </div>
+                <div class="col">
+                    <label for="bill"><strong>Bill Amount</strong></label>
+                    <input type="text" class="form-control" id="bill" name="bill" placeholder="xxxxxxxxx" required="">
+                </div>
+            </div><br>
+            <label for="email"><strong>Email Address</strong></label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email address" required=""></br>
+            <label for="aadhar"><strong>Your Aadhar Number</strong></label>
+            <input type="text" class="form-control" id="aadhar" name="aadhar" placeholder="xxxx xxxx xxxx"
+                value={{ post.aadhar }} required=""></br>
+            <label for="fn"><strong>First name</strong></label>
+            <input type="text" class="form-control" id="fn" name="fn" placeholder="First Name"
+                value={{post.first}} required=""></br>
+            <label for="ln"><strong>Last Name</strong></label>
+            <input type="text" class="form-control" id="ln" name="ln" placeholder="Last Name"
+                value={{post.second}} required=""></br>
+
+            <label for="add"><strong>Address</strong></label>
+            <input type="text" class="form-control" id="add" name="add"
+                placeholder="Door number/street/area/city/state/pincode...." value="{{post.address}}" required=""></br>
+
+            <button class="btn btn-primary btn-lg md-4 mx-auto d-block">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
